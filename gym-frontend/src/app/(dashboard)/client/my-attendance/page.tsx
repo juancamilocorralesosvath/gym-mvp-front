@@ -18,7 +18,8 @@ import { Calendar, TrendingUp, Filter, AlertCircle } from 'lucide-react'
 import { Button } from '@/app/components/ui/Button'
 import attendancesService from '@/app/services/attendances/attendances.service'
 import { useAuthStore } from '@/app/_store/auth/auth.store'
-import type { Attendance, AttendanceStatsResponse, AttendanceType } from '@/app/interfaces/attendance.interface'
+import { AttendanceType } from '@/app/interfaces/attendance.interface'
+import type { Attendance, AttendanceStatsResponse } from '@/app/interfaces/attendance.interface'
 
 export default function MyAttendancePage() {
   const { user } = useAuthStore()
@@ -200,15 +201,15 @@ export default function MyAttendancePage() {
                   Todas
                 </Button>
                 <Button
-                  onClick={() => setFilterType('gym')}
-                  variant={filterType === 'gym' ? 'primary' : 'secondary'}
+                  onClick={() => setFilterType(AttendanceType.GYM)}
+                  variant={filterType === AttendanceType.GYM ? 'primary' : 'secondary'}
                   className="text-sm"
                 >
                   Gimnasio
                 </Button>
                 <Button
-                  onClick={() => setFilterType('class')}
-                  variant={filterType === 'class' ? 'primary' : 'secondary'}
+                  onClick={() => setFilterType(AttendanceType.CLASS)}
+                  variant={filterType === AttendanceType.CLASS ? 'primary' : 'secondary'}
                   className="text-sm"
                 >
                   Clases

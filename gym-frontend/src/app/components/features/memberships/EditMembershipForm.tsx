@@ -19,7 +19,7 @@ interface EditMembershipFormProps {
 export function EditMembershipForm({ membership, onSubmit, onCancel }: EditMembershipFormProps) {
   const [formData, setFormData] = useState<UpdateMembershipDto>({
     name: membership.name,
-    cost: parseFloat(membership.cost),
+    cost: membership.cost,
     max_classes_assistance: membership.max_classes_assistance,
     max_gym_assistance: membership.max_gym_assistance,
     duration_months: membership.duration_months as 1 | 12,
@@ -32,7 +32,7 @@ export function EditMembershipForm({ membership, onSubmit, onCancel }: EditMembe
   useEffect(() => {
     setFormData({
       name: membership.name,
-      cost: parseFloat(membership.cost),
+      cost: membership.cost,
       max_classes_assistance: membership.max_classes_assistance,
       max_gym_assistance: membership.max_gym_assistance,
       duration_months: membership.duration_months as 1 | 12,

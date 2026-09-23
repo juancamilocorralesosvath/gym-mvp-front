@@ -34,8 +34,7 @@ export type {
 export type {
   Attendance,
   AttendanceStatus,
-  AttendanceStats,
+  AttendanceStatsResponse,
   CreateAttendanceDto,
   CheckOutDto,
-  GetHistoryParams,
-} from './attendances.interface'
+} from './attendance.interface'

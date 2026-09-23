@@ -100,7 +100,7 @@ export default function MembershipsManagementPage() {
     {
       key: 'cost',
       header: 'Cost',
-      render: (membership: Membership) => `$${parseFloat(membership.cost).toFixed(2)}`
+      render: (membership: Membership) => `$${membership.cost.toFixed(2)}`
     },
     {
       key: 'duration_months',

@@ -66,7 +66,7 @@ export default function MembershipDetailPage({ params }: MembershipDetailPagePro
 
       // Filter subscriptions that include this membership
       const filteredSubscriptions = allSubscriptions.filter(
-        sub => sub.memberships && sub.memberships.some(m => m.id === membershipId)
+        sub => sub.items && sub.items.some(item => item.membership?.id === membershipId)
       )
       setSubscriptions(filteredSubscriptions)
 
@@ -167,7 +167,7 @@ export default function MembershipDetailPage({ params }: MembershipDetailPagePro
               </div>
               <div>
                 <p className="text-sm font-medium text-gray-500">Cost</p>
-                <p className="mt-1 text-lg text-gray-900">${parseFloat(membership.cost).toFixed(2)}</p>
+                <p className="mt-1 text-lg text-gray-900">${membership.cost.toFixed(2)}</p>
               </div>
             </div>
 
